@@ -122,6 +122,7 @@ Si aucune charge n'existe, retourner un objet vide {}.
     response = requests.post(url, headers=headers, json=payload)
     print("Received...")
     response = response.json()
+    print(response)
     response = response["choices"][0]['message']['content']
     print("Extracting JSON...")
     match = re.search(r"(?s)\{.*}",response)

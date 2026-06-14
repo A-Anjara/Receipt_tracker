@@ -224,7 +224,8 @@
 
   <script>
     //
-    HOST = 'https://receipt-tracker-titx.onrender.com';
+    //HOST = 'https://receipt-tracker-titx.onrender.com';
+    HOST = 'http://localhost:5000';
     // DATE D'AUJOURD'HUI
     let today_element = document.getElementById("datetoday");
     let today = new Date();
@@ -484,7 +485,7 @@
         let result = await fetch(`${HOST}/upload`, {"method":"POST",body:formdata});
         result = await result.json();
         clearUpload();
-        sendBtn.disabled = true;
+        sendBtn.disabled = false;
         sendBtn.innerText = "Envoyer";
 
       }
